@@ -10,14 +10,14 @@ namespace ADO.NET_MS_SQL
     {
         static void Main(string[] args)
         {
-            ReadDatabase.ReadAllStudents();
-            //ReadDataBase.ReadAllTrainers();
-            //ReadDataBase.ReadAllCourses();
-            //ReadDataBase.ReadAllProjects();
-            //ReadDataBase.ReadAllStudentsPerCourse();
-            //ReadDataBase.ReadAllTrainersPerCourse();
-            //ReadDataBase.ReadAllProjectsPerCourse();
-            //ReadDataBase.ReadAllProjectsPerStudent();
+            //ReadDatabase.ReadAllStudents();
+            //ReadDatabase.ReadAllTrainers();
+            //ReadDatabase.ReadAllCourses();
+            //ReadDatabase.ReadAllProjects();
+            ReadDatabase.ReadAllStudentsPerCourse();
+            //ReadDatabase.ReadAllTrainersPerCourse();
+            ReadDatabase.ReadAllProjectsPerCourse();
+            ReadDatabase.ReadAllProjectsPerStudent();
             //WriteDataBase.InsertNewStudents();
 
             Console.ReadKey();
