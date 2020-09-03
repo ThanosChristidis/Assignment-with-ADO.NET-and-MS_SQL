@@ -16,8 +16,8 @@ namespace ADO.NET_MS_SQL
             //ReadDatabase.ReadAllProjects();
             ReadDatabase.ReadAllStudentsPerCourse();
             //ReadDatabase.ReadAllTrainersPerCourse();
-            ReadDatabase.ReadAllProjectsPerCourse();
-            ReadDatabase.ReadAllProjectsPerStudent();
+            //ReadDatabase.ReadAllProjectsPerCourse();
+             ReadDatabase.ReadAllProjectsPerStudent();
             //WriteDataBase.InsertNewStudents();
 
             Console.ReadKey();

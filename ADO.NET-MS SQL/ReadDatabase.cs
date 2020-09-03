@@ -297,7 +297,7 @@ namespace ADO.NET_MS_SQL
                 using (SqlConnection dbcon = new SqlConnection(connectionString))
                 {
                     dbcon.Open();
-                    SqlCommand command = new SqlCommand("select S.FirstName, S.LastName, C.Title, C.CType, P.Title as PTitle, TuitionFees, PPS.Project_ID, PPS.Course_ID, PPS.Student_ID " +
+                    SqlCommand command = new SqlCommand("select S.FirstName, S.LastName, C.Title, C.CType, P.Title as PTitle, PPS.Project_ID, PPS.Course_ID, PPS.Student_ID " +
                                                          "from ProjectPerStudent PPS " +
                                                          "inner join Project P on P.Project_ID = PPS.Project_ID " +
                                                          "inner join Course C on C.Course_ID = PPS.Course_ID " +
@@ -306,9 +306,9 @@ namespace ADO.NET_MS_SQL
 
                     SqlDataReader reader = command.ExecuteReader();
 
-                    Console.WriteLine("\t____________ __________  _____________ __________ ______________");
-                    Console.WriteLine("\t| ProjectID | CourseID | Course Title |   Type   | Project Title|");
-                    Console.WriteLine("\t____________ __________  _____________ __________ _______________");
+                    Console.WriteLine("\t____________ __________ ___________ ___________  ___________ ______________ __________ ______________ ______");
+                    Console.WriteLine("\t| ProjectID | CourseID | StudentID | First Name | Last Name | Course Title |   Type   | Project Title| Fees |");
+                    Console.WriteLine("\t____________ __________ ___________ ____________ ___________ ______________ __________ ______________ ______");
 
 
                     while (reader.Read())
@@ -316,15 +316,18 @@ namespace ADO.NET_MS_SQL
                         var projectid = reader["Project_ID"];
                         var courseid = reader["Course_ID"];
                         var studentid = reader["Student_ID"];
+                        var firstname = reader["FirstName"];
+                        var lastname = reader["LastName"];
                         var coursetitle = reader["Title"];
                         var type = reader["CType"];
                         var projecttitle = reader["PTitle"];
+                       
 
 
-                        Console.WriteLine("\t|{0,10}|{1,10}|{2,16}|{3,9}|{4,13}|", projectid, courseid, coursetitle, type, projecttitle);
+                        Console.WriteLine("\t|{0,10}|{1,10}|{2,10}|{3,16}|{4,16}|{5,16}|{6,15}|{7,18}", projectid, courseid, studentid, firstname, lastname, coursetitle, type, projecttitle);
                     }
 
-                    Console.WriteLine("\t____________ __________ _______________ _________ _____________");
+                    Console.WriteLine("\t____________ __________ __________ ____________ ____________ ________________ __________ _______________");
                 }
 
             }
